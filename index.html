@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MusicViz</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1 class="header">MusicViz</h1>
+  <div class="container">
+    <div class="chat-window">
+      <div class="chat-body">
+        <div class="custom-icon">
+          <!-- Custom icon/image goes here -->
+          <img src="web/musicvizlogo.png" alt="Custom Icon">
+        </div>
+        <div class="message received">
+          <div class="message-content">
+            <p>Elevate your image with music</p>
+          </div>
+        </div>
+      </div>
+      <div class="chat-footer">
+        <div class="input-container">
+          <span class="upload-text">Upload Image...</span>
+          <label for="imageUpload" class="custom-file-input">
+            <input type="file" id="imageUpload" accept="image/*">
+            <button id="chooseFileBtn">Choose File</button>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dialog Overlay -->
+  <div id="dialogOverlay" class="dialog-overlay">
+    <div id="dialogBox" class="dialog-box">
+      <span id="closeDialog" class="close-dialog">&times;</span>
+      <h2>Upload Image</h2>
+      <input type="file" id="imageUploadDialog" accept="image/*">
+      <button id="submitBtn">Submit</button>
+    </div>
+  </div>
+
+  <!-- Song Player Container (Initially Hidden) -->
+  <div class="song-player-container" style="display: none;">
+    <div class="song-details">
+      <div class="image-container">
+        <!-- Image uploaded will be displayed here -->
+        <img src="" alt="Uploaded Image" id="uploadedImage">
+      </div>
+      <div class="song-info">
+        <h2 id="songName">Song Name</h2>
+        <p id="bandName">Band Name</p>
+      </div>
+    </div>
+    <div class="action-buttons">
+      <button id="cameraButton"><img src="web/icons8-camera-100.png" alt="Camera Icon" style="filter: brightness(0) invert(1);"></button>
+      <button id="likeButton"><img src="web/icons8-thumb-96.png" alt="Thumbs Up Icon" style="filter: brightness(0) invert(1);"></button>
+      <button id="dislikeButton"><img src="web/icons8-thumb-96.png" alt="Thumbs Down Icon" style="filter: brightness(0) invert(1); transform: rotate(180deg)"></button>
+    </div>
+    <div class="progress-bar">
+      <div class="progress" id="progress"></div>
+    </div>
+    <div class="control-buttons">
+      <button id="previousButton">Previous</button>
+      <button id="pauseButton">Pause</button>
+      <button id="nextButton">Next</button>
+      <!-- <button id="nextButton"><img src="web/rand_next.png" alt="Next Button" style="width: 50px; height: 50px;"></button> -->
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
