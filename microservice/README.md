@@ -55,6 +55,28 @@ The following instructions will provide guidance on how to use the microservice.
 
     Replace `path/to/your/file.json` with the actual path to your JSON file. Adjust the `output_key` and `filter_json` form fields as needed based on what data you want to retrieve.
 
+   **Python POST Example**;
+```python
+import requests
+import json
+
+url = 'http://localhost:5000/upload_and_get_data'  # Update with your actual URL
+
+# Specify the correct path to your file
+files = {'file': open('path/to/your/data.json', 'rb')}
+data = {
+    'output_key': 'meta',  # Specify the key you're interested in
+    'filter_json': 'track_id:6f807x0ima9a1j3VPbc7VN'  # Optional filter
+}
+
+response = requests.post(url, files=files, data=data)
+if response.status_code == 200:
+    print(json.loads(response.text))
+else:
+    print("Error:", response.text)
+
+```
+
 ### Filtering Data
 
 The `filter_json` parameter is optional. If provided, it should be in the format `key:value`. The microservice will return data that matches the specified key-value pair within the `output_key`'s data.
